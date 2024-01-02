@@ -20,14 +20,11 @@ export async function POST(request: NextRequest) {
             })
         }
         console.log(user);
-        console.log("hi")
 
         user.isVerified = true;
         user.verifyToken = undefined;
         user.verifyTokenExpiry = undefined;
         await user.save();
-
-        console.log("hi2")
 
         return NextResponse.json({
             status: "success",

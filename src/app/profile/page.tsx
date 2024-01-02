@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation'
 
 const ProfilePage = () => {
   const router = useRouter();
+  
   const logout = async () => {
     try {
       const response = await axios.get("/api/users/logout");

@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
     try {
         const reqBody = await request.json();
         const { username, password, email } = reqBody;
-
+ 
         console.log(reqBody)
 
         //check user exists
