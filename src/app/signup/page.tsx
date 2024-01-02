@@ -21,11 +21,17 @@ const SignupPage = () => {
 
   const onSignup = async () => {
     try {
-      setLoading(true);
-      const response = await axios.post("/api/users/signup", user);
-      console.log("Signup success", response.data);
-      toast.success("Signup successful");
-      router.push("/login");
+      if (user.email.length > 0 && user.password.length > 0 && user.username.length > 0) {
+        setLoading(true);
+        const response = await axios.post("/api/users/signup", user);
+        console.log("response :>> ", response);
+        console.log("Signup success", response.data);
+        toast.success("Signup successful");
+        router.push("/login");
+      }
+      else{
+        toast.error("Please fill all the details");
+      }
     } catch (error: any) {
       console.log("Signup failed", error.message);
       toast.error(error.message);

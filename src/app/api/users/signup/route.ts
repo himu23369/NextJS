@@ -5,8 +5,10 @@ import bcryptjs from "bcryptjs"
 
 export async function POST(request: NextRequest) {
     try {
+        // console.log("Request ------------------------>  ",request.nextUrl);
+        // console.log("Request ------------------------>  ",request.nextUrl.pathname);
         const reqBody = await request.json();
-        const { username, password, email } = reqBody;
+        const { username, password, email } = reqBody; 
 
         console.log(reqBody)
 
