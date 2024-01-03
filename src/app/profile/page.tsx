@@ -25,7 +25,7 @@ const ProfilePage = () => {
   const getUserDetails = async () => {
     const res = await axios.get('/api/users/me');
     console.log(res.data);
-    setData(res.data.userData._id);   
+    setData(res.data.userData.username);   
   }
 
   return (
